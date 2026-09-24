@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "livro-app-starter",
+  "description": "Fábrica de livros-app: do manuscrito ao app de leitura, com PDF e EPUB do mesmo conteúdo.",
+  "owner": {
+    "name": "Cláudio Sityá",
+    "url": "https://github.com/csitya100-lab"
+  },
+  "plugins": [
+    {
+      "name": "fabrica-livro-app",
+      "description": "Transforma um manuscrito em livro-app: um app de leitura instalável (PWA), mais PDF e EPUB a partir do mesmo conteúdo.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/csitya100-lab/livro-app-starter"
+    }
+  ]
+}

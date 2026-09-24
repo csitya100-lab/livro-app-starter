@@ -1,0 +1,11 @@
+{
+  "name": "fabrica-livro-app",
+  "description": "Transforma um manuscrito em livro-app: um app de leitura instalável (PWA), mais PDF e EPUB a partir do mesmo conteúdo. Traz a skill do pipeline, os scripts e o motor de leitura.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cláudio Sityá",
+    "url": "https://github.com/csitya100-lab"
+  },
+  "homepage": "https://github.com/csitya100-lab/livro-app-starter",
+  "license": "MIT"
+}

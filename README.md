@@ -39,11 +39,33 @@ crie um título novo a partir do manuscrito em meu-livro/manuscrito/
 A skill `fabrica-livro-app` assume dali: inventaria o manuscrito, converte em blocos, valida as
 referências no PubMed, monta o `content/`, roda a validação e entrega o app rodando.
 
+## Caminho alternativo: instalar como plugin
+
+Se você prefere trabalhar numa pasta sua, sem clonar nada, instale a fábrica como plugin do Claude
+Code. Dentro do Claude Code:
+
+```
+/plugin marketplace add csitya100-lab/livro-app-starter
+/plugin install fabrica-livro-app@livro-app-starter
+```
+
+A partir daí a skill funciona em qualquer pasta, o comando `/livro-novo` abre o pipeline, e os
+scripts e a casca vêm do próprio plugin. Para começar:
+
+```
+/livro-novo meu-livro/manuscrito/manuscrito.md
+```
+
+> A skill está em dois lugares no repositório, com o mesmo conteúdo: `.claude/skills/` serve a quem
+> clona, `skills/` serve a quem instala o plugin. Ao editar uma, copie para a outra.
+
 ## Como o repositório é organizado
 
 ```
 CLAUDE.md                          regras de esquema, editoriais e técnicas (o agente lê antes de tudo)
-.claude/skills/fabrica-livro-app/  o passo a passo do pipeline
+.claude/skills/fabrica-livro-app/  o passo a passo do pipeline (para quem clona)
+.claude-plugin/                    manifestos do plugin e do marketplace
+skills/ e commands/                a mesma skill e o comando /livro-novo (para quem instala)
 fabrica/
   md2book.py                       manuscrito.md  ->  content/book.json
   validate.py                      confere o content/ contra o que a casca renderiza
