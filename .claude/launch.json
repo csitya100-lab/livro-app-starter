@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "exemplo-livro",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "exemplo-livro", "run", "dev"],
+      "port": 8080
+    }
+  ]
+}

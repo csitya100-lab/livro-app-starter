@@ -1,0 +1,130 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system da casca.
+ * Identidade do título (background, foreground, primary, accent, highlight e fontes)
+ * vem de content/theme.json, injetada em <style> pelo __root.tsx.
+ * Os demais tokens abaixo são derivados/neutros e valem para qualquer título.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-highlight: var(--highlight);
+  --font-serif: var(--theme-font-serif), Georgia, serif;
+  --font-sans: var(--theme-font-sans), system-ui, -apple-system, sans-serif;
+}
+
+/*
+ * Tokens derivados: nascem de --background, --foreground, --primary e --accent, que vêm de
+ * content/theme.json. Assim cartões, bordas e superfícies acompanham a paleta de cada título,
+ * sem nenhuma cor de identidade escrita aqui.
+ */
+:root {
+  --radius: 0.875rem;
+  --card: color-mix(in oklab, var(--background) 45%, #fff);
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --secondary: color-mix(in oklab, var(--background) 88%, var(--foreground));
+  --secondary-foreground: var(--foreground);
+  --muted: var(--secondary);
+  --muted-foreground: color-mix(in oklab, var(--foreground) 58%, var(--background));
+  --destructive: oklch(0.52 0.2 25);
+  --destructive-foreground: #fff;
+  --border: color-mix(in oklab, var(--background) 86%, var(--foreground));
+  --input: var(--border);
+  --ring: var(--accent);
+  --surface: color-mix(in oklab, var(--background) 94%, var(--foreground));
+}
+
+.dark {
+  --card: color-mix(in oklab, var(--background) 92%, var(--foreground));
+  --secondary: color-mix(in oklab, var(--background) 86%, var(--foreground));
+  --muted-foreground: color-mix(in oklab, var(--foreground) 78%, var(--background));
+  --destructive: oklch(0.68 0.19 25);
+  --border: color-mix(in oklab, var(--background) 84%, var(--foreground));
+  --surface: color-mix(in oklab, var(--background) 94%, var(--foreground));
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@utility safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+@utility safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Corpo do livro: tamanho e altura de linha controlados pelo leitor */
+.reading-body {
+  font-family: var(--font-serif);
+  font-size: var(--reader-font-size, 1.0625rem);
+  line-height: var(--reader-line-height, 1.75);
+}
+
+/* Abertura do capítulo: parágrafo maior com capitular, para dar um ponto de entrada visual */
+.reading-body .lead {
+  font-size: 1.12em;
+  line-height: 1.55;
+}
+
+.reading-body .lead::first-letter {
+  float: left;
+  margin: 0.04em 0.07em 0 0;
+  font-family: var(--font-serif);
+  font-size: 3.1em;
+  font-weight: 700;
+  line-height: 0.82;
+  color: var(--accent);
+}

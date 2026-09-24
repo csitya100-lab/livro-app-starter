@@ -1,0 +1,72 @@
+{
+  "id": "exemplo-livro",
+  "title": "Livro de Exemplo",
+  "subtitle": "Como um manuscrito vira um livro-app",
+  "shortName": "Exemplo",
+  "author": {
+    "name": "Nome do Autor",
+    "credentials": "CRM-UF 00000 · RQE 0000"
+  },
+  "tagline": "Manuscrito · Blocos · App",
+  "description": "Título de demonstração da fábrica de livros-app: três capítulos curtos que exercitam todos os tipos de bloco.",
+  "lang": "pt-BR",
+  "cover": "images/capa.png",
+  "icons": {
+    "192": "icon-192.png",
+    "512": "icon-512.png",
+    "180": "icon-180.png"
+  },
+  "fonts": {
+    "sans": "Manrope",
+    "serif": "Source Serif 4"
+  },
+  "colors": {
+    "themeColor": "#14504B",
+    "light": {
+      "background": "#F7F6F2",
+      "foreground": "#1B2430",
+      "primary": "#14504B",
+      "primaryForeground": "#F2F7F5",
+      "accent": "#2F6F68",
+      "accentForeground": "#F2F7F5",
+      "highlight": "#E8B54B",
+      "blocks": {
+        "quiz": "#5B4BA8",
+        "flashcard": "#2F7A5C",
+        "calc": "#14504B",
+        "chart": "#A85A2F"
+      }
+    },
+    "dark": {
+      "background": "#12191F",
+      "foreground": "#E7EDF2",
+      "primary": "#0C1116",
+      "primaryForeground": "#E7EDF2",
+      "accent": "#7FD1C4",
+      "accentForeground": "#0C1116",
+      "highlight": "#E8B54B",
+      "blocks": {
+        "quiz": "#B3A9F0",
+        "flashcard": "#9FCBB3",
+        "calc": "#7FD1C4",
+        "chart": "#E9A87C"
+      }
+    }
+  },
+  "storagePrefix": "exemplo",
+  "blockTypes": [
+    "p",
+    "h2",
+    "h3",
+    "image",
+    "table"
+  ],
+  "plannedBlockTypes": [
+    "audio",
+    "hotspot",
+    "compare",
+    "steps",
+    "image-quiz",
+    "model3d"
+  ]
+}
